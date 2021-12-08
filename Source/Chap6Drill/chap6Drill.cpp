@@ -17,7 +17,7 @@
 
 */
 
-#include "../../std_lib_facilities.h"
+#include "../std_lib_facilities.h"
 
 //------------------------------------------------------------------------------
 
@@ -155,7 +155,7 @@ double term()
 // deal with + and -
 double expression()
 {
-    double left = term(;      // read and evaluate a Term
+    double left = term();      // read and evaluate a Term
     Token t = ts.get();        // get the next token from token stream
 
     while (true) {
@@ -182,6 +182,8 @@ try
 {
     cout << "Welcome to our simple calculator. Please enter expressions using floating-point numbers." << endl;
     cout << "You can use +, -, *, / and = for result, x for close." << endl;
+
+    double val{0};
 
     while (cin) {
         Token t = ts.get();
